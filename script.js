@@ -262,16 +262,16 @@ rippleStyle.textContent = `
             }
         `;
 // OpenStreetMap Karte mit Leaflet initialisieren
-const map = L.map('map').setView([32.6189, 36.1058], 13); // Bosra, Syrien
+const map = L.map('map').setView([32.62394, 36.10949], 13); // Bosra, Syrien
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
 }).addTo(map);
 
 // Marker hinzufügen
-L.marker([32.6189, 36.1058])
+L.marker([32.62394, 36.10949])
     .addTo(map)
-    .bindPopup('<a href="https://maps.google.com/?q=32.6189,36.1058" target="_blank">افتح في خرائط Google</a>')
+    .bindPopup('<a href="https://maps.google.com/?q=32.62394, 36.10949" target="_blank">افتح في خرائط Google</a>')
     .openPopup();
 
 
