@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DruckProfi</title>
+    <title>Pixel Plus</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
 
 </head>
 
@@ -17,11 +19,11 @@
 
     <header>
         <nav class="container">
-            <a href="#" class="logo"><i class="fas fa-print"></i> DruckProfi</a>
+            <a href="#" class="logo"><i class="fas fa-print"></i> Pixel Plus </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">الرئيسية</a></li>
                 <li><a href="#services">الخدمات</a></li>
-                <li><a href="#portfolio">المَلَفّات</a></li>
+                <li><a href="#portfolio">المشاريع</a></li>
                 <li><a href="#about">معلومات عنا</a></li>
                 <li><a href="#team">الفريق</a></li>
                 <li><a href="#contact">اتصال</a></li>
@@ -37,8 +39,8 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>الطباعة الاحترافية للمستقبل</h1>
-                <p class="subtitle">طباعة عالية الجودة بأحدث التقنيات - سريعة ومستدامة وبجودة ممتازة</p>
+                <h1>طباعة احترافية للمستقبل</h1>
+                <p class="subtitle">طباعة عالية الجودة بأحدث التقنيات - سريعة وبجودة ممتازة</p>
 
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -47,7 +49,7 @@
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">500+</span>
-                        <div class="stat-label">عملاء الراضون</div>
+                        <div class="stat-label">عملاء راضون</div>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">24h</span>
@@ -56,7 +58,7 @@
                 </div>
 
                 <div class="cta-buttons">
-                    <a href="#contact" class="cta-button cta-primary">طلب عرض أسعار</a>
+                    <a href="#contact" class="cta-button cta-primary">طلب عرض سعر</a>
                     <a href="#portfolio" class="cta-button cta-secondary">عرض المحفظة</a>
                 </div>
             </div>
@@ -69,7 +71,7 @@
                 <div class="feature-item fade-in">
                     <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
                     <h3>خدمة سريعة</h3>
-                    <p>طلبات سريعة خلال 24 ساعة - متوفرة أيضًا في عطلات نهاية الأسبوع</p>
+                    <p>خدمة سريعة خلال 24 ساعة </p>
                 </div>
                 <div class="feature-item fade-in">
                     <div class="feature-icon"><i class="fa-solid fa-gem"></i></div>
@@ -253,8 +255,8 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text slide-in-left">
-                    <h2>عن DruckProfi</h2>
-                    <p>مع أكثر من 15 سنة من الخبرة في مجال الطباعة، نحن شريككم الموثوق لجميع احتياجات الطباعة. فريقنا
+                    <h2>عن Pixel Plus</h2>
+                    <p>مع أكثر من 20 سنة من الخبرة في مجال الطباعة، نحن شريككم الموثوق لجميع احتياجات الطباعة. فريقنا
                         يضمن تنفيذ مشاريعكم بأعلى جودة وفي الوقت المحدد.</p>
                     <p>ندمج طرق الطباعة التقليدية مع أحدث التقنيات مع الالتزام الكامل بالاستدامة. يتم تحديث معداتنا
                         بانتظام لنقدم لكم دائماً أفضل جودة ممكنة.</p>
@@ -285,7 +287,7 @@
                     <div class="member-info">
                         <h4>ايوب الزعبي</h4>
                         <div class="member-role">المدير التنفيذي وخبير الطباعة</div>
-                        <p class="member-bio">15 سنة من الخبرة في مجال الطباعة. متخصص في الطباعة الأوفست وإدارة الجودة.
+                        <p class="member-bio">20 سنة من الخبرة في مجال الطباعة. متخصص في الطباعة الأوفست وإدارة الجودة.
                         </p>
                     </div>
                 </div>
@@ -335,7 +337,7 @@
                         </div>
                         <div class="info-text">
                             <h4>البريد الإلكتروني</h4>
-                            <p>info@druckprofi.de<br>angebot@druckprofi.de</p>
+                            <a href="mailto:pixel_plus@gmail.com">pixel_plus@gmail.com</a>
                         </div>
                     </div>
 
@@ -347,10 +349,7 @@
                             <p>السبت - الخميس: 8:00 - 18:00<br>الجمعة: مغلق</p>
                         </div>
                     </div>
-
-                    <div class="map-container">
-                        <i class=" fas fa-map-marked-alt "></i> خريطة تفاعلية
-                    </div>
+                    <div class="map-container" id="map" style="height: 300px;"></div>
                 </div>
             </div>
         </div>
@@ -360,8 +359,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>دروكبروفي</h4>
-                    <p>شريككم للحلول الطباعية الاحترافية منذ أكثر من 15 عامًا. الجودة، السرعة، والاستدامة هي علامتنا
+                    <h4>Pixel Plus</h4>
+                    <p>شريككم للحلول الطباعية الاحترافية منذ أكثر من 20 عامًا. الجودة، السرعة، والاستدامة هي علامتنا
                         المميزة.</p>
                     <div class="social-links">
                         <a href="#" title="facebook"><i class="fab fa-facebook-f"></i></a>
@@ -401,7 +400,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 دروكبروفي. جميع الحقوق محفوظة.
+                <p>&copy; 2025 Pixel Plus. جميع الحقوق محفوظة.
                 </p>
             </div>
         </div>
@@ -411,6 +410,10 @@
 
     </div>
 
+    <!-- Leaflet JS zuerst laden -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Danach dein eigenes Skript -->
     <script src="script.js"></script>
 </body>
 
